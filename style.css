@@ -1,0 +1,110 @@
+:root {
+  --primary-color: coral;
+  --secondary-color: chocolate;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f4f4;
+}
+
+#navbar ul {
+  list-style: none;
+}
+
+#navbar ul li {
+  display: inline-block;
+  padding: 1rem;
+  color: #333;
+  position: relative;
+}
+
+#navbar ul li a {
+  text-decoration: none;
+  color: #333;
+  display: inline-block;
+}
+
+/* Hide nested ul by default */
+#navbar ul li ul {
+  display: none;
+}
+
+#navbar ul li:hover {
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+#navbar ul li:hover a {
+  color: #fff;
+}
+
+/* Nested ul drop down show */
+#navbar ul li:hover ul {
+  display: block;
+  position: absolute;
+  left: 0;
+  margin-top: 1rem;
+  width: 200px;
+}
+
+#navbar ul li:hover ul li {
+  display: block;
+  background: #e7e7e7;
+}
+
+#navbar ul li:hover ul a {
+  color: #333;
+}
+
+#navbar ul li:hover ul li:hover {
+  background: #e0e0e0;
+  color: inherit;
+}
+
+#navbar ul li:hover ul li span {
+  float: right;
+  background: var(--primary-color);
+  font-size: smaller;
+  padding: 0.2rem 0.5rem;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+}
+
+#navbar ul li:hover ul li:hover span {
+  background: var(--secondary-color);
+}
+
+#showcase {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  height: 300px;
+  padding: 0 2rem;
+}
+
+#showcase h1 {
+  font-size: 4rem;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  #navbar ul li {
+    display: block;
+  }
+  #navbar ul li:hover ul {
+    position: relative;
+    width: 100%;
+  }
+}
